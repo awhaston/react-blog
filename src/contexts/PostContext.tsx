@@ -20,15 +20,13 @@ export function PostProvider({ children }: any) {
 	useEffect(() => {
 		setLoading(true);
 		const fetchData = async () => {
-			const postsCollection = collection(db, 'posts');
-			const postSnapshot = await getDocs(postsCollection);
-			const postList = postSnapshot.docs.map((doc) => doc.data());
-			return postList;
+			const dataCollection = collection(db, 'posts');
+			const querySnapshot = await getDocs(dataCollection);
+			const newData = querySnapshot.docs.map((doc) => doc.data());
+			setData(newData);
 		};
 
-		fetchData().then((res) => {
-			setData(res);
-		});
+		fetchData();
 		setLoading(false);
 	}, []);
 
