@@ -6,7 +6,7 @@ import { PostProvider } from './contexts/PostContext';
 
 function Layout() {
 	return (
-		<>
+		<div className='main-container'>
 			<NavBar />
 			<PostProvider>
 				<Suspense fallback={<h1>Loading</h1>}>
@@ -14,7 +14,7 @@ function Layout() {
 				</Suspense>
 			</PostProvider>
 			<Footer />
-		</>
+		</div>
 	);
 }
 
