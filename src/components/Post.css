@@ -1,0 +1,11 @@
+.images {
+	width: 25%;
+	height: 25%;
+}
+
+.post-container {
+	height: 300px;
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+}
