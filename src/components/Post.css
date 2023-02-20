@@ -9,3 +9,8 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.post-container p {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}

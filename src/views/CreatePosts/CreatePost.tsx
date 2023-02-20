@@ -2,8 +2,8 @@ import MDEditor from '@uiw/react-md-editor';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { useState } from 'react';
-import { usePosts } from '../contexts/PostContext';
-import { db, storage } from '../firebase';
+import { usePosts } from '../../contexts/PostContext';
+import { db, storage } from '../../firebase';
 import './CreatePost.css';
 
 function CreatePost() {

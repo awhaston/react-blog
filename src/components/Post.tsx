@@ -9,8 +9,7 @@ function Post({ props, classes }: any) {
 	useEffect(() => {
 		setUrl('/posts/' + props.id);
 		if (props.title !== undefined) {
-			let title = props.title.slice(0, 200) + '...';
-			setBody(title);
+			setBody(props.title);
 		}
 	});
 
