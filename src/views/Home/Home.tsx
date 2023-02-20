@@ -44,7 +44,7 @@ function Home() {
 				url: data[recent]?.header_url,
 				body: data[recent]?.body.slice(0, 400) + '...',
 				created: data[recent]?.createdAt,
-				id: data[recent]?.id,
+				id: data[recent]?.id - 1,
 			});
 
 			setPostOne({
@@ -55,7 +55,7 @@ function Home() {
 						: data[recent - 1]?.title,
 				url: data[recent - 1]?.header_url,
 				created: data[recent - 1]?.createdAt,
-				id: data[recent - 1]?.id,
+				id: data[recent - 1]?.id - 1,
 			});
 			setPostTwo({
 				...postTwo,
@@ -65,7 +65,7 @@ function Home() {
 						: data[recent - 2]?.title,
 				url: data[recent - 2]?.header_url,
 				created: data[recent - 2]?.createdAt,
-				id: data[recent - 2]?.id,
+				id: data[recent - 2]?.id - 1,
 			});
 			setPostThree({
 				...postThree,
@@ -75,7 +75,7 @@ function Home() {
 						: data[recent - 3]?.title,
 				url: data[recent - 3]?.header_url,
 				created: data[recent - 3]?.createdAt,
-				id: data[recent - 3]?.id,
+				id: data[recent - 3]?.id - 1,
 			});
 		}
 	}, [data]);
@@ -90,7 +90,7 @@ function Home() {
 
 				<div className='home-body'>
 					<p>{mainPost.body}</p>
-					<Link to={`/posts/${mainPost.id}`}>Read More...</Link>
+					<Link to={`/post/${mainPost.id}`}>Read More...</Link>
 				</div>
 			</div>
 			<h2 className='home-post-header'>More Posts...</h2>

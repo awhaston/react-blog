@@ -7,7 +7,7 @@ function Post({ props, classes }: any) {
 	const [body, setBody] = useState('');
 
 	useEffect(() => {
-		setUrl('/posts/' + props.id);
+		setUrl('/post/' + props.id);
 		if (props.title !== undefined) {
 			setBody(props.title);
 		}

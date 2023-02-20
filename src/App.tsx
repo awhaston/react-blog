@@ -17,7 +17,8 @@ function App() {
 			<Routes>
 				<Route element={<Layout />}>
 					<Route index element={<Home />} />
-					<Route path='posts' element={<Posts />}>
+					<Route path='posts' element={<Posts />}></Route>
+					<Route path='post'>
 						<Route path=':id' element={<PostPage />} />
 					</Route>
 					<Route path='login' element={<Login />} />
