@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Post.css';
 
-function Post({ props, classes }: any) {
+type Props = {
+	title: string;
+	url: string;
+	id: number;
+};
+
+function Post(props: Props, classes: string) {
 	const [url, setUrl] = useState('');
 	const [body, setBody] = useState('');
 
