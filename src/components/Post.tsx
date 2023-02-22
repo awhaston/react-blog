@@ -1,29 +1,25 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ResultPost } from '../types';
 import './Post.css';
 
-type Props = {
-	title: string;
-	url: string;
-	id: number;
-};
-
-function Post(props: Props, classes: string) {
+//TODO: Get types to work
+function Post({ props, classes }: any) {
 	const [url, setUrl] = useState('');
-	const [body, setBody] = useState('');
 
 	useEffect(() => {
 		setUrl('/post/' + props.id);
-		if (props.title !== undefined) {
-			setBody(props.title);
-		}
 	});
 
 	return (
 		<Link to={url}>
 			<div className={`post-container ${classes}`}>
-				<img src={props.url} alt={props.title} className='posts-images' />
-				<p>{body}</p>
+				<img
+					src={props.header_url}
+					alt={props.title}
+					className='posts-images'
+				/>
+				<p>{props.title}</p>
 			</div>
 		</Link>
 	);

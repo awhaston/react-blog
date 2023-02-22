@@ -2,36 +2,38 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Post from '../../components/Post';
 import { usePosts } from '../../contexts/PostContext';
+import { ResultPost } from '../../types';
 import './Home.css';
 
 function Home() {
-	const { data, loading }: any = usePosts();
-	const [mainPost, setMainPost] = useState({
+	const { data, loading } = usePosts();
+
+	const [mainPost, setMainPost] = useState<ResultPost>({
 		title: '',
-		url: '',
+		header_url: '',
 		body: '',
-		created: '',
+		createdAt: '',
 		id: 99,
 	});
-	const [postOne, setPostOne] = useState({
+	const [postOne, setPostOne] = useState<ResultPost>({
 		title: '',
-		url: '',
+		header_url: '',
 		body: '',
-		created: '',
+		createdAt: '',
 		id: 99,
 	});
-	const [postTwo, setPostTwo] = useState({
+	const [postTwo, setPostTwo] = useState<ResultPost>({
 		title: '',
-		url: '',
+		header_url: '',
 		body: '',
-		created: '',
+		createdAt: '',
 		id: 99,
 	});
-	const [postThree, setPostThree] = useState({
+	const [postThree, setPostThree] = useState<ResultPost>({
 		title: '',
-		url: '',
+		header_url: '',
 		body: '',
-		created: '',
+		createdAt: '',
 		id: 99,
 	});
 
@@ -41,9 +43,9 @@ function Home() {
 			setMainPost({
 				...mainPost,
 				title: data[recent]?.title,
-				url: data[recent]?.header_url,
+				header_url: data[recent]?.header_url,
 				body: data[recent]?.body.slice(0, 400) + '...',
-				created: data[recent]?.createdAt,
+				createdAt: data[recent]?.createdAt,
 				id: data[recent]?.id - 1,
 			});
 
@@ -53,8 +55,8 @@ function Home() {
 					data[recent - 1]?.title.length > 100
 						? data[recent - 1]?.title.slice(0, 100) + '...'
 						: data[recent - 1]?.title,
-				url: data[recent - 1]?.header_url,
-				created: data[recent - 1]?.createdAt,
+				header_url: data[recent - 1]?.header_url,
+				createdAt: data[recent - 1]?.createdAt,
 				id: data[recent - 1]?.id - 1,
 			});
 			setPostTwo({
@@ -63,8 +65,8 @@ function Home() {
 					data[recent - 2]?.title.length > 100
 						? data[recent - 2]?.title.slice(0, 100) + '...'
 						: data[recent - 2]?.title,
-				url: data[recent - 2]?.header_url,
-				created: data[recent - 2]?.createdAt,
+				header_url: data[recent - 2]?.header_url,
+				createdAt: data[recent - 2]?.createdAt,
 				id: data[recent - 2]?.id - 1,
 			});
 			setPostThree({
@@ -73,10 +75,11 @@ function Home() {
 					data[recent - 3]?.title.length > 100
 						? data[recent - 3]?.title.slice(0, 100) + '...'
 						: data[recent - 3]?.title,
-				url: data[recent - 3]?.header_url,
-				created: data[recent - 3]?.createdAt,
+				header_url: data[recent - 3]?.header_url,
+				createdAt: data[recent - 3]?.createdAt,
 				id: data[recent - 3]?.id - 1,
 			});
+			console.log(postOne, postTwo, postThree);
 		}
 	}, [data]);
 
@@ -84,7 +87,11 @@ function Home() {
 		<div className='home-container'>
 			<div className='home-main'>
 				<div className='home-header'>
-					<img src={mainPost.url} alt={mainPost.title} className='home-img' />
+					<img
+						src={mainPost.header_url}
+						alt={mainPost.title}
+						className='home-img'
+					/>
 					<h1>{mainPost.title}</h1>
 				</div>
 
@@ -94,6 +101,7 @@ function Home() {
 				</div>
 			</div>
 			<h2 className='home-post-header'>More Posts...</h2>
+
 			<div className='home-post-container'>
 				<Post props={postOne} classes='home-post' />
 				<Post props={postTwo} classes='home-post' />
