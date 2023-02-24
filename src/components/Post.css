@@ -4,7 +4,7 @@
 }
 
 .post-container {
-	height: 300px;
+	height: 230px;
 	width: 150px;
 	display: flex;
 	flex-direction: column;
@@ -13,4 +13,6 @@
 .post-container p {
 	margin-bottom: 0;
 	padding-bottom: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
