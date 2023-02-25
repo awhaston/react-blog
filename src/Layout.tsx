@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
+import Footer from './components/shared/Footer';
+import NavBar from './components/shared/NavBar';
 import { PostProvider } from './contexts/PostContext';
 
 function Layout() {
