@@ -25,11 +25,4 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 const auth = getAuth(app);
 
-export async function getPosts(db: any) {
-	const postsCollection = collection(db, 'posts');
-	const citySnapshot = await getDocs(postsCollection);
-	const postList = citySnapshot.docs.map((doc) => doc.data());
-	return postList;
-}
-
 export { auth, db, storage };
