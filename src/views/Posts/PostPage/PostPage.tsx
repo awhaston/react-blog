@@ -1,6 +1,6 @@
 import MDEditor from '@uiw/react-md-editor';
-import React, { useEffect, useState } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import PostSidebar from '../../../components/PostSidebar';
 import { usePosts } from '../../../contexts/PostContext';
 import { ResultPost } from '../../../types';
