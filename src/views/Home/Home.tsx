@@ -6,7 +6,7 @@ import { ResultPost } from '../../types';
 import './Home.css';
 
 function Home() {
-	const { data, loading } = usePosts();
+	const { data } = usePosts();
 
 	const [mainPost, setMainPost] = useState<ResultPost>({
 		title: '',
@@ -42,7 +42,7 @@ function Home() {
 	});
 
 	useEffect(() => {
-		if (!loading) {
+		if (data[0]?.title) {
 			let recent = data.length - 1;
 			setMainPost({
 				...mainPost,
