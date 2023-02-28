@@ -22,7 +22,8 @@ function PostPage() {
 	const [body, setBody] = useState('');
 	const [title, setTitle] = useState('');
 	const [created, setCreated] = useState('');
-	const [tags, setTags] = useState(['']);
+	const [tags, setTags] = useState('');
+	const [propTags, setPropTags] = useState(['']);
 	const navigator = useNavigate();
 
 	useEffect(() => {
@@ -46,6 +47,8 @@ function PostPage() {
 			navigator('/*');
 		}
 
+		let tag = post.tags?.toString().split(',').join(', ');
+
 		setTitle(post.title);
 		setBody(post.body);
 		setUrl(post.header_url);
@@ -58,7 +61,8 @@ function PostPage() {
 				'-' +
 				t.getFullYear().toString()
 		);
-		setTags(post.tags);
+		setPropTags(post.tags);
+		setTags(tag);
 	}, [data, loading, id]);
 
 	return (
@@ -77,7 +81,7 @@ function PostPage() {
 					}}
 				/>
 			</article>
-			<PostSidebar tags={tags} />
+			<PostSidebar tags={propTags} />
 		</main>
 	);
 }
