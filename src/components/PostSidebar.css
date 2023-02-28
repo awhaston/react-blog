@@ -1,0 +1,16 @@
+.postsidebar-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.postsidebar-posts {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	margin-top: 15px;
+}
+
+.postsidebar-img {
+	width: 200px;
+	height: 150px;
+}

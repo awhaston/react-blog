@@ -12,28 +12,32 @@ function Home() {
 		title: '',
 		header_url: '',
 		body: '',
-		createdAt: '',
+		createdAt: { nanoseconds: 0, seconds: 0 },
+		tags: [],
 		id: 99,
 	});
 	const [postOne, setPostOne] = useState<ResultPost>({
 		title: '',
 		header_url: '',
 		body: '',
-		createdAt: '',
+		createdAt: { nanoseconds: 0, seconds: 0 },
+		tags: [],
 		id: 99,
 	});
 	const [postTwo, setPostTwo] = useState<ResultPost>({
 		title: '',
 		header_url: '',
 		body: '',
-		createdAt: '',
+		createdAt: { nanoseconds: 0, seconds: 0 },
+		tags: [],
 		id: 99,
 	});
 	const [postThree, setPostThree] = useState<ResultPost>({
 		title: '',
 		header_url: '',
 		body: '',
-		createdAt: '',
+		createdAt: { nanoseconds: 0, seconds: 0 },
+		tags: [],
 		id: 99,
 	});
 
@@ -46,7 +50,7 @@ function Home() {
 				header_url: data[recent]?.header_url,
 				body: data[recent]?.body.slice(0, 400) + '...',
 				createdAt: data[recent]?.createdAt,
-				id: data[recent]?.id - 1,
+				id: data[recent]?.id,
 			});
 
 			setPostOne({
@@ -57,7 +61,7 @@ function Home() {
 						: data[recent - 1]?.title,
 				header_url: data[recent - 1]?.header_url,
 				createdAt: data[recent - 1]?.createdAt,
-				id: data[recent - 1]?.id - 1,
+				id: data[recent - 1]?.id,
 			});
 			setPostTwo({
 				...postTwo,
@@ -67,7 +71,7 @@ function Home() {
 						: data[recent - 2]?.title,
 				header_url: data[recent - 2]?.header_url,
 				createdAt: data[recent - 2]?.createdAt,
-				id: data[recent - 2]?.id - 1,
+				id: data[recent - 2]?.id,
 			});
 			setPostThree({
 				...postThree,
@@ -77,9 +81,8 @@ function Home() {
 						: data[recent - 3]?.title,
 				header_url: data[recent - 3]?.header_url,
 				createdAt: data[recent - 3]?.createdAt,
-				id: data[recent - 3]?.id - 1,
+				id: data[recent - 3]?.id,
 			});
-			console.log(postOne, postTwo, postThree);
 		}
 	}, [data]);
 
