@@ -1,4 +1,4 @@
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import React, { useContext, useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { ResultPost } from '../types';
@@ -30,7 +30,8 @@ export function PostProvider({ children }: any) {
 		setLoading(true);
 		const fetchData = async () => {
 			const dataCollection = collection(db, 'posts');
-			const querySnapshot = await getDocs(dataCollection);
+			const q = query(dataCollection, orderBy('id', 'desc'));
+			const querySnapshot = await getDocs(q);
 			const posts: ResultPost[] = [];
 			querySnapshot.forEach((doc) => {
 				const post = doc.data() as ResultPost;

@@ -43,46 +43,46 @@ function Home() {
 
 	useEffect(() => {
 		if (data[0]?.title) {
-			let recent = data.length - 1;
 			setMainPost({
 				...mainPost,
-				title: data[recent]?.title,
-				header_url: data[recent]?.header_url,
-				body: data[recent]?.body.slice(0, 400) + '...',
-				createdAt: data[recent]?.createdAt,
-				id: data[recent]?.id,
+				title: data[0]?.title,
+				header_url: data[0]?.header_url,
+				body: data[0]?.body.slice(0, 400) + '...',
+				createdAt: data[0]?.createdAt,
+				id: data[0]?.id,
 			});
 
 			setPostOne({
 				...postOne,
 				title:
-					data[recent - 1]?.title.length > 100
-						? data[recent - 1]?.title.slice(0, 100) + '...'
-						: data[recent - 1]?.title,
-				header_url: data[recent - 1]?.header_url,
-				createdAt: data[recent - 1]?.createdAt,
-				id: data[recent - 1]?.id,
+					data[0 + 1]?.title.length > 100
+						? data[0 + 1]?.title.slice(0, 100) + '...'
+						: data[0 + 1]?.title,
+				header_url: data[0 + 1]?.header_url,
+				createdAt: data[0 + 1]?.createdAt,
+				id: data[0 + 1]?.id,
 			});
 			setPostTwo({
 				...postTwo,
 				title:
-					data[recent - 2]?.title.length > 100
-						? data[recent - 2]?.title.slice(0, 100) + '...'
-						: data[recent - 2]?.title,
-				header_url: data[recent - 2]?.header_url,
-				createdAt: data[recent - 2]?.createdAt,
-				id: data[recent - 2]?.id,
+					data[0 + 2]?.title.length > 100
+						? data[0 + 2]?.title.slice(0, 100) + '...'
+						: data[0 + 2]?.title,
+				header_url: data[0 + 2]?.header_url,
+				createdAt: data[0 + 2]?.createdAt,
+				id: data[0 + 2]?.id,
 			});
 			setPostThree({
 				...postThree,
 				title:
-					data[recent - 3]?.title.length > 100
-						? data[recent - 3]?.title.slice(0, 100) + '...'
-						: data[recent - 3]?.title,
-				header_url: data[recent - 3]?.header_url,
-				createdAt: data[recent - 3]?.createdAt,
-				id: data[recent - 3]?.id,
+					data[0 + 3]?.title.length > 100
+						? data[0 + 3]?.title.slice(0, 100) + '...'
+						: data[0 + 3]?.title,
+				header_url: data[0 + 3]?.header_url,
+				createdAt: data[0 + 3]?.createdAt,
+				id: data[0 + 3]?.id,
 			});
+			console.log(data);
 		}
 	}, [data]);
 
