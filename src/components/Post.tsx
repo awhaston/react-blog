@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import { ResultPost } from '../types';
 import './Post.css';
 
-//TODO: Get types to work
-function Post({ props, classes }: any) {
+interface Props {
+	props: ResultPost;
+	classes: string;
+}
+
+function Post({ props, classes }: Props) {
 	const [url, setUrl] = useState('');
 
 	useEffect(() => {
