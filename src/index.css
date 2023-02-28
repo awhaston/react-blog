@@ -8,3 +8,7 @@ body {
 	margin-right: 2rem;
 	margin-left: 2rem;
 }
+
+.index-capitalize {
+	text-transform: capitalize;
+}
