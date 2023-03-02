@@ -90,12 +90,12 @@ function Home() {
 		<div className='home-container'>
 			<div className='home-main'>
 				<div className='home-header'>
+					<h1>{mainPost.title}</h1>
 					<img
 						src={mainPost.header_url}
 						alt={mainPost.title}
 						className='home-img'
 					/>
-					<h1>{mainPost.title}</h1>
 				</div>
 
 				<div className='home-body'>
