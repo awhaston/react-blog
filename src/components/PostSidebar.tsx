@@ -16,16 +16,14 @@ function PostSidebar({ tags }: Props) {
 	const parsedID = parseInt(id);
 
 	useEffect(() => {
+		if (!data[0]?.title) return;
 		let matchingPosts: ResultPost[] = [];
 		let t = tags?.toString().split(',').join(' & ');
 		setTag(t);
-
-		if (data[0]?.title) {
-			matchingPosts = findPosts(tags, data);
-			matchingPosts = matchingPosts.filter(function (post: ResultPost) {
-				return post.id !== undefined;
-			});
-		}
+		matchingPosts = findPosts(tags, data);
+		matchingPosts = matchingPosts.filter(function (post: ResultPost) {
+			return post.id !== undefined;
+		});
 
 		setPosts(matchingPosts);
 	}, [data, tags]);
