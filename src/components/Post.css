@@ -1,18 +1,31 @@
-.images {
-	width: 25%;
-	height: 25%;
+.post-images {
+	width: 15vw;
+	border-radius: 10px;
+	object-fit: contain;
 }
 
 .post-container {
-	height: 230px;
-	width: 150px;
+	height: 150px;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+	padding: 20px;
 }
 
 .post-container p {
 	margin-bottom: 0;
 	padding-bottom: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
+}
+
+.post-text-container {
+	display: flex;
+	flex-direction: column;
+	margin-left: 2rem;
+}
+
+.post-text-title {
+	font-size: medium;
+	font-weight: bold;
 }

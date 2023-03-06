@@ -16,16 +16,19 @@ function Post({ props, classes }: Props) {
 	});
 
 	return (
-		<Link to={url}>
-			<div className={`post-container ${classes}`}>
-				<img
-					src={props.header_url}
-					alt={props.title}
-					className='posts-images'
-				/>
-				<p>{props.title}</p>
+		<div className={`post-container ${classes}`}>
+			<img
+				src={props.header_url}
+				alt={props.title}
+				loading='lazy'
+				className='post-images'
+			/>
+			<div className='post-text-container'>
+				<span className='post-text-title'>{props.title}</span>
+				<p>{props.body.slice(0, 400)}...</p>
+				<Link to={url}>Read More...</Link>
 			</div>
-		</Link>
+		</div>
 	);
 }
 
