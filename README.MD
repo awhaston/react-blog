@@ -13,9 +13,5 @@ Homepage:
 Posts page:
 
 - x Filters
-- Search
-- Grid layout
 - Responsive
 - Styled
-  Edit Posts
-  x Dynamic Links
