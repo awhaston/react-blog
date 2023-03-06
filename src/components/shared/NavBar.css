@@ -1,10 +1,12 @@
 .n-bar {
 	width: 100%;
-	height: 3rem;
+	height: 2rem;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	align-items: center;
 	padding: 1rem;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
 }
 
 ul {
@@ -17,5 +19,5 @@ ul {
 
 ul li {
 	list-style-type: none;
-	padding: 2rem;
+	margin-right: 2rem;
 }

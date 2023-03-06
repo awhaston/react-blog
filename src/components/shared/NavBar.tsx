@@ -7,6 +7,9 @@ function NavBar() {
 
 	return (
 		<div className='n-bar'>
+			<span>
+				Coffee ☕️ <div>&& Coding 👨‍💻</div>
+			</span>
 			<ul>
 				<li>
 					<Link to='/'>Home</Link>
