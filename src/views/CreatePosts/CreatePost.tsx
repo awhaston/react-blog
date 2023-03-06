@@ -25,17 +25,17 @@ function CreatePost() {
 	const [loading, setLoading] = useState(false);
 	let isUpdating = false;
 	let { id }: any = useParams();
-	id = parseInt(id);
+	// id = parseInt(id);
 	const { data } = usePosts();
 
 	useEffect(() => {
-		if (id && data[0]?.title) {
-			const post = data.find((post) => post.id === id);
-			setTitle(post!.title);
-			setBody(post!.body);
-			setTags(post!.tags.toString());
-			isUpdating = true;
-		}
+		// if (id && data[0]?.title) {
+		// 	const post = data.find((post) => post.id == id);
+		// 	setTitle(post!.title);
+		// 	setBody(post!.body);
+		// 	setTags(post!.tags.toString());
+		// 	isUpdating = true;
+		// }
 		console.log(isUpdating);
 		console.log(data);
 	}, [data, id]);
