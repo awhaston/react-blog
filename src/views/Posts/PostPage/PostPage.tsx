@@ -27,6 +27,7 @@ function PostPage() {
 	const navigator = useNavigate();
 
 	useEffect(() => {
+		if (!data[0]?.title) return;
 		const index = parseInt(id);
 		let loaded = false;
 
