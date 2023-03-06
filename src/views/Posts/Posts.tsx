@@ -58,10 +58,11 @@ function Posts() {
 	return (
 		<div className='posts-container'>
 			<div className='posts-filterbar'>
-				<form>
-					Filter posts by:
+				<form className='posts-form'>
+					<span>Filter posts by:</span>
+
 					{uniqueTags?.map((tag, index) => (
-						<div key={index}>
+						<div className='posts-input' key={index}>
 							<input
 								type='checkbox'
 								value={tag}

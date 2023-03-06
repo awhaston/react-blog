@@ -12,3 +12,30 @@
 	border-bottom: 0;
 	border-color: rgba(0, 0, 0, 0.25);
 }
+
+.posts-input {
+	display: flex;
+}
+
+@media screen and (max-width: 800px) {
+	.posts-container {
+		flex-direction: column;
+	}
+
+	.posts-filterbar {
+		border-style: none;
+		width: auto;
+	}
+
+	.posts-form {
+		flex-direction: row;
+	}
+
+	.posts-form span {
+		display: none;
+	}
+
+	.posts-input {
+		display: inline;
+	}
+}

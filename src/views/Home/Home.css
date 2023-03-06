@@ -43,3 +43,19 @@
 .home-post {
 	margin-left: 10px;
 }
+
+@media screen and (max-width: 800px) {
+	.home-main {
+		flex-direction: column;
+		align-items: center;
+	}
+	.home-header {
+		display: flex;
+		flex-direction: column;
+		width: 95%;
+	}
+	.home-body {
+		width: 95%;
+		margin-left: 0;
+	}
+}

@@ -21,3 +21,6 @@
 	margin-bottom: 2rem;
 	object-fit: cover;
 }
+
+@media screen and (max-width: 480px) {
+}

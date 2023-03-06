@@ -5,13 +5,17 @@
 }
 
 .post-container {
-	height: 150px;
+	height: 250px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin: 10px;
-	padding: 20px;
+	margin: auto;
+	padding: auto;
+	margin-top: auto;
+	margin-left: 2rem;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .post-container p {
@@ -28,4 +32,26 @@
 .post-text-title {
 	font-size: medium;
 	font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+	.post-images {
+		display: none;
+	}
+	.post-container {
+		margin-top: rem;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.post-container {
+		height: 50%;
+	}
+	.post-images {
+		display: none;
+	}
+
+	.post-text-container {
+		margin-left: 0;
+	}
 }
