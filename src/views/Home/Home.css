@@ -1,27 +1,25 @@
 .home-container {
-	height: 100vh;
 	margin-top: 1rem;
 	margin-bottom: 2rem;
 }
 
 .home-img {
-	width: 1000px;
-	height: 500px;
+	width: 100%;
+	border-radius: 10px;
 }
 
 .home-main {
 	display: flex;
-	justify-content: center;
 	flex-direction: row;
 	border-style: solid;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding: 20px;
 	border-radius: 10px;
 }
 
 .home-header {
 	display: flex;
 	flex-direction: column;
+	width: 65%;
 }
 
 .home-header h1 {
@@ -29,17 +27,16 @@
 }
 
 .home-body {
-	width: 20vw;
+	width: 30%;
 	margin-left: 3rem;
-	height: 100%;
 }
 
 .home-post-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	font-size: small;
 	justify-content: center;
-	padding-top: 20px;
+	padding-top: 10px;
 	padding-bottom: 20px;
 }
 
