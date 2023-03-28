@@ -1,7 +1,5 @@
-
-function NotFound(){
-
-    return <>Not Found</>
+function NotFound() {
+	return <>404: Not Found</>;
 }
 
-export default NotFound
+export default NotFound;
